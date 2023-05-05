@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Centro cultural quilombo urbano</title>
+        <style type="text/css">
+            input[type="text"]:focus{
+                padding: 0 20px;
+                border: 2px #FC3 solid;
+                background-color: orange;
+            }
+            input[type="number"]:focus{
+                padding: 0 20px;
+                border: 2px #FC3 solid;
+                background-color: orange;
+            }
+            input[type="text"]{
+                width: 400px;
+            }
+            textarea{
+                width: 400px;
+                height: 200px;
+                padding: 20px;
+            }
+            option:not(:checked), textarea:focus{
+                background-color: orange;
+            }
+            fieldset{
+                border: 2px #FF9 solid;
+                background-color: #FF9;
+            }
+
+        </style>
+    </head>        
+    <body bgcolor="orange">
+        <fieldset align="center">
+        <h1 align="center"><b>Cadastramento de atividades do Centro Cultural Quilombo Urbano</b></h1>
+        <p>Projeto afro-centrado, sedeado no Centro Comunitário do Bairro São Dimas, localizado nas dependências da Universidade Federal de São João del-Rei, gestado pelo Movimento Negro de São João del-Rei, convida aos artistas locais, organizações sociais, projetos educativos, projetos de extensão, à participarem do aquilombamento de atividades em prol da utilização contínua do espaço. O objetivo do projeto é proporcionar aos moradores da comunidade supra mencionada, de todas as faixas etárias, uma série de ações/oficinas, que visam o bem estar e a acessibilidade ao lazer, arte, cultura e educação, afim de efetivar a Lei 10.639/2003.</p>
+    </fieldset>
+    <br/>
+        <h2><b>ESTRUTURA DO ESPAÇO</b></h2>
+        <ol>
+            <li><b>Área coberta:</b></li>
+            <ul>
+                <li>Um salão</li>
+                <li>Sala 1: Biblioteca comunitária</li>
+                <li>Sala 2: Escritório do Movimento Negro de São João del Rei</li>
+                <li>Uma cozinha</li>
+                <li>Três banheiros, sendo um PNE (sigla para pessoas com necessidades especiais)</li>
+            </ul>
+            <br/>
+            <li><b>Área externa</b></li>
+            <ul>
+                <li>Uma quadra esportiva</li>
+                <li>Um campinho aberto</li>
+                <li>Espaço para fazer horta comunitária</li>
+            </ul>
+        </ol>
+        <h2><b>MATERIAS DISPONÍVEIS</b></h2>
+        <h3><b><i>(Mediante agendamento com Movimento Negro de São João del Rei)</i></b></h3>
+        <ul>
+            <li>Projetor e tela de projeção</li>
+            <li>Caixa de som com microfone</li>
+            <li>Impressora</li>
+            <li>Cadeiras (no espaço tem dez cadeiras, caso precise de mais, favor solicitar com antecedência)</li>
+            <li>Folhas de papel, canetas, tesouras, cola, borrachas, revistas e jornais</li>
+            <li>Notebook</li>
+        </ul>
+        <br/>
+        <p align="center">Email para agendamento, dúvidas, sugestões:</p>
+        <p align="center">mnsjr.quilombourbano@gmail.com</p>
+        <br/>
+        <p>Todos os projetos devem ser alinhados com a proposta de troca de saberes, de promover o acolhimento, pertencimento e inclusão. Os oficineiros regulares, ficam comprometidos ajudarem a manter o local limpo e organizado, bem como participarem da reunião mensal para abordamos sobre os balanços das atividades, as futuras intenções e estudo do letramento racial. </p>
+        <br/>
+
+    <fieldset>
+    <form action="form.php" method="post">
+
+        <legend><b>Formulário de projeto</b></legend>
+        <form>
+        <ol>
+            <li>Nome do projeto e/ou oficina:</li>
+            <p align="left">Se for membro do Mov. Negro coloque entre parentêses.</p>
+            <p align="left">Ex: Roda de Oralidade (MNSJ)</p>
+            <form>
+                <label for="pname"></label><br/>
+                <input type="text" id="pname" name="pname" required onchange="salvarValor(this)"><br/>
+            </form>
+            <br/>
+            <li>Nome d(o)(a)(e) responsável:</li>
+            <form>
+                <label for="rname"></label><br>
+                <input type="text" id="rname" name="rname" required><br>
+            </form>
+            <br/>
+            <li>Email de contato:</li>
+            <form>
+                <label for="email"></label><br>
+                <input type="email" id="email" name="email" required><br>
+            </form>
+            <br/>
+            <li>Telefone de serviço:</li>
+            <form>
+                <label for="telefone"></label><br>
+                <input type="number" id="number" class="input-padrao" required placeholder="(xx) xxxxx-xxxx"><br>
+            </form>
+            <br/>
+            <li>Faça uma pequena apresentação sobre o projeto:</li>
+            <textarea cols="60" rows="20" id="apresentacao" required></textarea>
+            <br/>
+            <li>Seu projeto é:</li>
+            <p>
+                Independente: <input type="checkbox" id="projeto" /><br />
+                De extensão: <input type="checkbox" id="projeto"/><br />
+                Voluntário: <input type="checkbox" id="projeto"/><br />
+                Financiado: <input type="checkbox" id="projeto"/>
+            </p>
+            <br/>
+            <li>Quantas pessoas fazem parte do seu projeto?</li>
+            <p>
+                1: <input type="checkbox" id="pessoas" /><br />
+                2: <input type="checkbox" id="pessoas"/><br />
+                3: <input type="checkbox" id="pessoas"/><br />
+                4 ou mais: <input type="checkbox" id="pessoas"/>
+            </p>
+            <br/>
+            <li>A constância da proposta de atuação é:</li>
+            <p>
+                Duas vezes na semana: <input type="checkbox" id="atuacao"/><br />
+                Uma vez na semana: <input type="checkbox" id="atuacao"/><br />
+                De 15 em 15 dias: <input type="checkbox" id="atuacao"/><br />
+                Uma vez por mês: <input type="checkbox" id="atuacao"/>
+                <br/>
+                Pontual (uma atividade - não exclui a possibilidade de cadastrar em outra oportunidade): <input type="checkbox" id="atuacao"/>
+                <br/>
+                Outra (Digite abaixo qual o tipo de constância): <input type="checkbox" id="atuacao"/>
+                <br/>
+                <textarea cols="70" rows="10" id="atuacao" required></textarea>
+            </p>
+            <br/>
+            <li>O público alvo do projeto é:</li>
+            <p>
+            Crianças: <input type="checkbox" id="publico"/><br />
+            Adolescentes: <input type="checkbox" id="publico"/><br />
+            Mulheres: <input type="checkbox" id="publico"/><br />
+            Terceira idade: <input type="checkbox" id="publico"/>
+                <br/>
+            Todos: <input type="checkbox" id="publico"/>
+                <br/>
+            Outra (Digite abaixo qual o tipo de público): <input type="checkbox" id="publico"/>
+            <br/>
+            <textarea cols="70" rows="10" id="publico" required></textarea>
+        </p>
+            <br/>
+            <li>Qual(ais) dia(s) e horário você tem disponível para realizar sua atividade. E qual é o tempo estimado de duração? - Se possível, coloque duas possiblidades de horário (em ordem de prioridade).</li>
+            <ol type="a">
+                <p align="left">Exemplo:</p>
+                <li>Toda sexta às 18h (com 1h de duração)</li>
+                <li>O primeiro e terceiro domingo do mês às 14h (com 2h de duração)</li>
+                <li>20/03/2023 (segunda-feira) às 20h (com 1h30m de duração)</li>
+            </ol>
+                <textarea cols="70" rows="10" id="horário" required></textarea>
+                <br>
+            <br/>
+            <li>Seu projeto consegue providenciar seus próprios materiais (além dos já dispostos acima), ou precisa de algum outro item? Quais equipamentos/ferramentas/utensílios você sugere para o espaço?</li>
+            <p align="left"><i>O Movimento Negro de São João del Rei fica comprometido de conseguir aos poucos materiais para o espaço.</i></p>
+
+            <input type="text" id="material" required>
+            <br/>
+            <form action="acog24@gmail.com" method="post" onsubmit="return validarFormulario()">
+                <button type="submit">Enviar</button>
+                
+                
+                <script>
+                    function validarFormulario(){
+                        var pnome = document.getElementById("pnome").value;
+                        var rnome = document.getElementById("rnome").value;
+                        var email = document.getElementById("email").value;
+                        var telefone = document.getElementById("telefone").value;
+                        var apresentacao = document.getElementById("apresentacao").value;
+                        var projeto = document.getElementById("projeto").value;
+                        var pessoas = document.getElementById("pessoas").value;
+                        var atuacao = document.getElementById("atuacao").value;
+                        var publico = document.getElementById("publico").value;
+                        var horario = document.getElementById("horario").value;
+                        var material = document.getElementById("material").value;
+
+                        if (pnome == "" || rnome == "" || email == "" || telefone == "" || apresentacao == "" || projeto == "" || pessoas == "" || atuacao == "" || publico == "" || horario == "" || material == ""){
+                            alert("Por favor, preencha todo o formulário.")
+                            return false
+                        }
+                        return true;
+                    }
+                </script>
+            
+        
+            </form>
+        </ol>
+    </form>
+    </form>
+    </fieldset>
+    <br/>
+    <fieldset>
+        <legend><b>Formulário do professor/palestrante</b></legend>
+        <ol>
+            <li>Nome completo:</li>
+            <form>
+                <input type="text" id="nome" name="nome" required>
+            </form>
+            <br/>
+            <li>Data de nascimento:</li>
+            <form>
+                <input type="date" id="data" name="data" required style="width: 100px;">
+            </form>
+            <br/>
+            <li>Gênero:</li>
+            <form>
+                Masculino: <input type="checkbox" id="genero" name="genero" required>
+                Feminino: <input type="checkbox" id="genero" name="genero" required>
+                Outro: <input type="checkbox" id="genero" name="genero" required>
+            </form>
+            <br/>
+            <li>Nacionalidade:</li>
+            <form>
+                <input type="text" id="nacionalidade" name="nacionalidade" required>
+            </form>
+            <br/>
+            <li>Escolaridade:</li>
+            <form>
+                Ensino médio/técnico: <input type="checkbox" required>
+                Onde formou: <input type="text" required style="width: 300px;">
+                <br/>
+                Ensino superior/curso: <input type="checkbox" id="genero" name="genero" required>
+                Onde formou: <input type="text" id="escolaridade" name="escolaridade" required style="width: 300px;">
+                <br/>
+            </form>
+            <br/>
+            <li>Titularidade:</li>
+            <form>
+                Especialização/curso: <input type="checkbox" id="titularidade" name="titularidade" required>
+                Onde realiza: <input type="text" id="titularidade" name="titularidade" required style="width: 300px;">
+                <br/>
+                Mestrado/Área: <input type="checkbox" id="titularidade" name="titularidade" required>
+                Onde realiza: <input type="text" id="titularidade" name="titularidade" required style="width: 300px;">
+                <br/>
+                Doutorado/Área: <input type="checkbox" id="titularidade" name="titularidade" required>
+                Onde realiza: <input type="text" id="titularidade" name="titularidade" required style="width: 300px;">
+            </form>
+            <br/>
+            <li>CPF:</li>
+            <form>
+                <input type="number" id="cpf" name="cpf" required style="width: 200px;">
+            </form>
+            <br/>
+            <li>Telefone:</li>
+            <form>
+                <label for="telefone"></label><br>
+                <input type="number" id="telefone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx" required style="width: 200px;"><br>
+            </form>
+            <br/>
+            <li>Habilidades:</li>
+            <form>
+                <textarea cols="50" rows="10"></textarea>
+            </form>
+            <br/>
+            <li>Disponibilidade:</li>
+            <form>
+                <textarea cols="50" rows="10"></textarea>
+            </form>
+            <br/>
+            <li>Envio de documentos:</li>
+            <input type="hidden" name="doc" value="4194304" />
+            <input type="file"/>
+            <br/>
+            
+                <br/>
+                <button type="submit">Enviar</button>
+            </form>
+        </ol>
+
+    </fieldset>
+
+    </body>
+</html>
